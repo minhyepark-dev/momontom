@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+#dandelion > div {
+  position: absolute;
+  z-index: 0;
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.container section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.container .clock_weather {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.container section:last-child h2 {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.list_wrap,
+.clock_weather {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list_wrap {
+  margin-top: 20px;
+}
+
+.list_wrap > div {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  width: calc(50% - 5px);
+  padding: 20px;
+}
+
+.list_wrap > div h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.list_wrap > div ul {
+  padding-left: 20px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.list_wrap > div ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.list_wrap > div ul li button:first-of-type {
+  margin-left: 10px;
+  margin-right: 3px;
+}
+
+.clock_weather {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.clock_weather p {
+  font-size: 18px;
+}
+
+.clock h3 {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.weather {
+  background: url(../img/celsius.png) no-repeat left center;
+  background-size: 40px;
+  padding: 20px 20px 20px 40px;
+}
+
+.form {
+  display: none;
+}
+
+.form input,
+.form_do input {
+  width: 100%;
+  height: 90px;
+  line-height: 90px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border: 0;
+  padding-left: 30px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.form.on {
+  display: block;
+}
+
+.form input::placeholder {
+  text-align: center;
+  font-size: 25px;
+  line-height: 80px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.form input::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 25px;
+  line-height: 80px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.add_name {
+  font-size: 30px;
+  text-align: center;
+  display: none;
+  color: white;
+}
+
+.add_name.on {
+  display: block;
+}
